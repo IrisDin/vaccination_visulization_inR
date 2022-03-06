@@ -1,9 +1,15 @@
 # Title of Your Final Project Here 
 ## INFO 201 "Foundational Skills for Data Science" — Winter 2022
 
-Authors: Your names here
+**Authors:**
+|  Name:   | Contact infomation：  |
+|  ----  | ----  |
+| YUNYI(Iris) Ding  | yding7@uw.edu|
+| Joyce Chan  | yinchu@uw.edu |
+| Zaozao Li  | zaozal@uw.edu |
+| Tzuyang Lin(Frank) | lin528@uw.edu |
 
-Link: Link to your Shiny App here
+**Link:** Link to your Shiny App here
 
 Please create the necessary files for your multi-page Shiny app in this GitHub repository. Consult the Canvas assignment for more details. Be sure to publish your app on Shinyapps.io.
 
