@@ -1,4 +1,4 @@
-# Title of Your Final Project Here 
+# Global Covid-19 Vaccination Analysis
 ## INFO 201 "Foundational Skills for Data Science" — Winter 2022
 
 **Authors:**
@@ -9,7 +9,7 @@
 | Zaozao Li  | zaozal@uw.edu |
 | Tzuyang Lin(Frank) | lin528@uw.edu |
 
-**Link:** Link to your Shiny App here
+**Link:** https://irisdin.shinyapps.io/final-project-IrisDin/
 
 Please create the necessary files for your multi-page Shiny app in this GitHub repository. Consult the Canvas assignment for more details. Be sure to publish your app on Shinyapps.io.
 
