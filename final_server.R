@@ -10,12 +10,11 @@ vac_data <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-pro
 vac_type_data <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-IrisDin/main/country_vaccinations_by_manufacturer.csv?token=GHSAT0AAAAAABQJIPKKN2REY6KTUB2TIXI4YRPXTSA")
 
 options(scipen=999)
-vac_data$date <- as.Date(vac_data$date)
 
 server <- function(input, output) {
   
     output$vacplot <- renderPlotly({
-
+    vac_type_data$date <- as.Date(vac_type_data$date)
     vac_type_data <- vac_type_data %>% filter(vaccine == input$vac_type)
     vac_plot <- ggplot(data = vac_type_data) +
       aes(x = date, fill = vaccine, group = vaccine, weight = total_vaccinations) +
