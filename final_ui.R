@@ -18,7 +18,7 @@ vac_data$date <- as.Date(vac_data$date)
 # introduction ui page
 intro_tab <- tabPanel(
   "Introduction",
-  fluidPage(theme = bs_theme(bootswatch = "Sandstone"),
+  fluidPage(theme = bs_theme(bootswatch = "minty"),
             img( border="0",src = "https://publichealth.jhu.edu/sites/default/files/styles/article_feature/public/2021-07/carrying-equity-in-covid-19-vaccination-forward.png?h=f2862316&itok=C9sfEOAv", height = 400, width = 700),
             h1("Purpose/Importance:"),
             p("The COVID-19 pandemic has led to the dramatic loss of human life and presents unprecedented challenges to not only public health, but also individual health more importantly. Though, people who had Covid recovered, still Covid do have potential sequelae to the different organs. 
@@ -52,7 +52,7 @@ we will conduct an in-depth analysis of people's willingness and brand of vaccin
 # summary and takeaway ui page
 summary_tab <- tabPanel(
   "Summary/Takeways",
-  fluidPage(theme = bs_theme(bootswatch = "Sandstone"),
+  fluidPage(theme = bs_theme(bootswatch = "minty"),
             img( border="0",src = "https://www.hopkinsmedicine.org/-/media/images/health/1_-conditions/coronavirus/vaccine3.ashx?la=en&hash=E14E7B4842E409C6FC40A8659B1B68F3529C0841", height = 450, width = 700),
             h1("Specific takeaways💉："),
             p("First takeaway: There is an increasing pattern of vaccine types being used in the world and more and more people are getting vaccinated, which shows that people's self-protection awareness is increased as time goes by. Beyond this trend, it is obivious that Pfizer/BioNtech and Moderna are the top two brands that
@@ -125,8 +125,8 @@ line_sidebar <- sidebarPanel(
 line_daily_vaccination_tab <-tabPanel(
   "Daily vaccination trend",
   sidebarLayout(
+    line_sidebar,
     line_plot_main,
-    line_sidebar
   )
 )
 
