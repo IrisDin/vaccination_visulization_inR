@@ -5,19 +5,66 @@ library(bslib)
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
+library(shiny)
 #load the dataset
 vac_data <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-IrisDin/main/country_vaccinations.csv?token=GHSAT0AAAAAABQJIPKKBIXZC475QKPXS5CKYRPXS7Q")
 vac_type_data <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-IrisDin/main/country_vaccinations_by_manufacturer.csv?token=GHSAT0AAAAAABQJIPKKN2REY6KTUB2TIXI4YRPXTSA")
+# data pre-processing
 vac_type_data <- rename(vac_type_data, country = location)
 options(scipen=999)
 vac_type_data$date <- as.Date(vac_type_data$date)
 vac_data$date <- as.Date(vac_data$date)
 
 intro_tab <- tabPanel(
-  "Introduction",
+  "Introduction:",
   fluidPage(theme = bs_theme(bootswatch = "minty"),
-            h1(""),
-            p("Welcome")
+            img( border="0",src = "https://publichealth.jhu.edu/sites/default/files/styles/article_feature/public/2021-07/carrying-equity-in-covid-19-vaccination-forward.png?h=f2862316&itok=C9sfEOAv", height = 400, width = 700),
+            h1("Purpose/importance"),
+            p("The COVID-19 pandemic has led to the dramatic loss of human life and presents unprecedented challenges to not only public health, but also individual health more importantly. Though, people who had Covid recovered, still Covid do have potential sequelae to the different organs. 
+Thus, it is crucial and urgent to get vaccinated and make it universally accessible to ensure a safe condition for the general public. The pandemic is far from over, and vaccines are our best bet on staying safe. As more and more people get vaccinated, the community immunity, 
+also individual community would both improve and further secure the invade of the virus. Our main issue is the inconvenience that covid brings to people's lives. This issue is very important because it relates to the long-term impact of covid on humans. To address this issue, 
+we will conduct an in-depth analysis of people's willingness and brand of vaccination.")
+  ),
+  br(),
+  h1("Main questions🤔:"),
+  p("Question 1: To see the trend of people getting vaccinated around the world by analyzing different vaccine brand being used worldwide"),
+  br(),
+  p("Question 2: Daily vaccination trend in different country and in different period of time."),
+  br(),
+  p("Question 3: To visualize the distribution of vaccinated population in a world map."),
+  br(),
+  h1("About the dataset:"),
+  p("We found the dataset from the Kaggle site which was collected from the authoritative organization Our World in Data GitHub repository specifically for the covid-19, and it is still continuing to update. There are two files of the dataset, one contains locations, also includes vaccination sources' information. 
+            The second file is information about the manufacturers like Moderna and Pfizer. From the comprehensive vaccination information in different countries, people can see the total number of people who get vaccinated in their country which might let them feel safe. Also, from the vaccination information, people can also 
+            visualize which country does not access adequate medical resources(vaccinations) that further provided them with help and facilitated the progress to ending the global pandemic."),
+  tags$a(href ="https://www.kaggle.com/gpreda/covid-world-vaccination-progress.", "Visit kaggle Website to check our data"),
+  br(),
+  h1("limitations:"),
+  br(),
+  p("After viewing the dataset, we found out several limitations and problems of the dataset. To begin with, there is a lot of missing values in the front part of the dataset. However, when we scroll down the dataset, there are only a small amount of missing values remaining. To sum up, the missing values only made up a small proportion of the whole dataset. 
+            We think we can change the distribution of the missing value after filtering and sorting the dataset by using R. Also, another potential problem with the dataset is that there are over 70000 rows of the dataset which contain all different countries’ vaccination information. This is a large dataset that might be hard to process and filter the core information and pattern we want.
+            The potential solution we came up with is that we need to further explore our research question and drop the information or data we do not need. We need to clean and condense our dataset in order to get better visualization. In addition, we think it is necessary for us to add more features to the dataset for better analysis. For example, merging the vaccine type feature can help 
+            us better visualize the usage for different brands’ vaccination like Pfizer or Moderna in different areas.")
+)
+
+
+summary_tab <- tabPanel(
+  "Summary/Takeways:",
+  fluidPage(theme = bs_theme(bootswatch = "minty"),
+            h1("Specific takeaways："),
+            p("First takeaway: There is an increasing pattern of vaccine types being used in the world and more and more people are getting vaccinated, which shows that people's self-protection awareness is increased as time goes by. Beyond this trend, it is obivious that Pfizer/BioNtech and Moderna are the top two brands that
+being used most frequently. By the end of Jan, 2022, more than 600 millions of people have taken the vaccine from Pfizer/BioNtech, which is the most popular brand all over the world."),
+            p("Second takeaway: The daily vaccination trend of the U.S. seems steady as time passes and has been kept under 5 millions per day. Compared with the U.S., Chinese daily vaccination rate has been constantly increased from under 5 millions per day to over 10 millions per day. This comparison proves that American people are not taking vaccination as seriously as Chinese do. Moreover, even though the daily vaccination number starts to decrease after Jan, 2022, China still has the highest daily vaccination rate than all of the other countries in the world. "),
+            br(),
+            p("Third takeaway: China has the highest daily vaccination and the most vacccinated population in the world. India is the country that covered with the most fully vaccinated population. COVID-19 is originated in China so it is easy to tell that China is the one that 
+takes the pandemic most seriously. As its nearby country, India also took immediate actions to fight against the coronavirus. The pandemic is orinally identified in China, and then it spread to Asia and then being spread throughout the whole world. Countries with large population density are more able to be infected and
+the U.S. has also been influenced severely so it has a relative high vaccinated population as well."),
+            br(),
+            h1("Insight："),
+            p("In recent years, the covid-19 pandemic has swept the entire globe and caused large number of infections and deaths. China has the most population in the world and is the origin of COVID-19. It is the country that most actively prevent and control the pandemic."),
+            br(),
+            h1("Broader implications："),
+            p("As time passes by, the number of immune is increasing and shows that all human beings can recognize the importance of self-protection. People stick together to fight against the COVID-19 and this tough period of time is a historical moment that should be memorized by all human beings. Things are getting better right now and the world is getting covered by vaccines. So there would be more people being vaccinated in future no matter the daily vaccination trend is steady, increased, or decreased. Overall, the majority chooses to be vaccinated not only for protecting themselves, but also for protecting people they care for. ")
   )
 )
 
@@ -64,20 +111,51 @@ line_plot_main <- mainPanel(
   plotlyOutput(outputId = "fig"),
   h1("Description/Analysis of the visulization:"),
   br(),
-  p("", style = "font-size:23px;")
+  p("The reason why we produce this visualization is to provide our audiences with an overview of the world's vaccination distribution. We offer several vaccination related variables for people to select and view. 
+It is quite obivious that China has the highest daily vaccination and the most vacccinated population in the world.", style = "font-size:23px;")
 )
 
 line_daily_vaccination_tab <-tabPanel(
-  "Daily vaccination trend in different country/time",
+  "Daily vaccination trend",
   sidebarLayout(
     line_sidebar,
     line_plot_main
   )
 )
 
+# the ui setting for map
+map_plot_sidebar <- sidebarPanel(
+  selectInput(
+    inputId = "choice",
+    label = "Choice",
+    # Fill in the correct code here
+    choices = c(
+      "daily_vaccinations",
+      "total_vaccinations",
+      "people_fully_vaccinated"
+    ),
+    selected = "daily_vaccinations"
+  )
+)
+
+map_plot_main <- mainPanel(
+  plotlyOutput(outputId = "map")
+)
+
+map_plot_tab <- tabPanel(
+  "Maps",
+  sidebarLayout(
+    map_plot_sidebar,
+    map_plot_main
+  )
+)
+
+
 ui <- navbarPage(
   "Covid-19 Vaccination Analysis",
   intro_tab,
   vac_type_tab,
-  line_daily_vaccination_tab
+  line_daily_vaccination_tab,
+  map_plot_tab,
+  summary_tab
 )
