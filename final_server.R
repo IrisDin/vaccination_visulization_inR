@@ -12,11 +12,11 @@ library(scales)
 # load the data
 vac_data <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-IrisDin/main/country_vaccinations.csv?token=GHSAT0AAAAAABQJIPKKBIXZC475QKPXS5CKYRPXS7Q")
 vac_type_data <- read.csv("https://raw.githubusercontent.com/info-201b-wi22/final-project-IrisDin/main/country_vaccinations_by_manufacturer.csv?token=GHSAT0AAAAAABQJIPKKN2REY6KTUB2TIXI4YRPXTSA")
-
+# change the numbers into scientific notation
 options(scipen=999)
 
 server <- function(input, output) {
-  
+    # creating interactive bar plot
     output$vacplot <- renderPlotly({
     vac_type_data$date <- as.Date(vac_type_data$date)
     vac_type_data <- vac_type_data %>% filter(vaccine == input$vac_type)
@@ -29,14 +29,16 @@ server <- function(input, output) {
       labs(x = "Date", y = "Total Vaccination", title = "Vaccine types used in the world") +
       theme_minimal() +
       facet_wrap(~vaccine, scales="free")
-
+    # change the style of the civilization
     vac_plot <- vac_plot + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
     # Make interactive plot
-    my_plotly_plot <- ggplotly(vac_plot)
+    # change hover text
+    my_plotly_plot <- ggplotly(vac_plot, tooltip = c("vaccine"))
     return(my_plotly_plot)
   })
   
-  output$fig <- renderPlotly({
+  # line_daily was the interactive line chart we are creating
+  output$line_daily <- renderPlotly({
     vac_data$date <- as.Date(vac_data$date)
     my_plot <- vac_data %>% filter(country == input$user_category) %>% filter(date >= input$date[1] & date <= input$date[2])
     plots <- ggplot(data = my_plot) + geom_line(mapping = aes(x = date, y = daily_vaccinations, color = country)) +
@@ -45,7 +47,8 @@ server <- function(input, output) {
     my_plotly_plot <- ggplotly(plots)
     return(plots)
   })
-  # the map plot
+  
+  # creating the interactive the map
   processed <- vac_data %>%  select(country, date, total_vaccinations, people_fully_vaccinated, daily_vaccinations) %>% group_by(country) %>% filter(date == max(date)) 
   processed <- rename(processed, region = country)
   processed[processed == 'United States'] <- 'USA'
