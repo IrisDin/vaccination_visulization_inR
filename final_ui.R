@@ -71,9 +71,9 @@ the U.S. has also been influenced severely so it has a relative high vaccinated 
 
 type_plot_main <- mainPanel(
   plotlyOutput(outputId = "vacplot"),
-  h1("Description/Analysis of the visulization:"),
+  h1("Description/Analysis of the visualization:"),
   br(),
-  p("The reason why we construct the vaccine used in the world, to be more specific, classified by the brand of the vaccine throughout of the world, is to see what's the trend of people getting vaccinated worldwide, and reveals the people's awareness of self-protection.  Meanwhile, we can spot among all these different kinds of vaccines, which one is most prevalent after all. From the graphs generated, it is very obvious, considering all the countries as a whole, more and more people getting vaccinated global-wise, an increasing pattern, though there are some sag occurred. Another insight we can extract the graph is that the most popular vaccine would be Pfizer/BioNtech, Moderna, and Pfizer is the one used most frequently.", style = "font-size:23px;")
+  p("The reason why we construct the vaccine used in the world, to be more specific, classified by the brand of the vaccine throughout the world, is to see what's the trend of people getting vaccinated worldwide, and reveals the people's awareness of self-protection. Meanwhile, we can spot among all these different kinds of vaccines, which one is most prevalent after all. From the graphs generated, it is very obvious, considering all the countries as a whole, more and more people getting vaccinated global-wise, an increasing pattern, though there are some sag occurring. Another insight we can extract from the graph is that the most popular vaccines would be Pfizer/BioNtech, Moderna, and Pfizer is the one used most frequently.", style = "font-size:23px;")
 )
 
 plot_sidebar_type <- sidebarPanel(
@@ -109,10 +109,9 @@ line_sidebar <- sidebarPanel(
 
 line_plot_main <- mainPanel(
   plotlyOutput(outputId = "fig"),
-  h1("Description/Analysis of the visulization:"),
+  h1("Description/Analysis of the visualization:"),
   br(),
-  p("The reason why we produce this visualization is to provide our audiences with an overview of the world's vaccination distribution. We offer several vaccination related variables for people to select and view. 
-It is quite obivious that China has the highest daily vaccination and the most vacccinated population in the world.", style = "font-size:23px;")
+  p("The reason why we produce this visualization is to provide our audiences with an overview of the world's vaccination distribution. We offer several vaccination related variables for people to select and view. It is quite obvious that China has the highest daily vaccination and the most vaccinated population in the world.", style = "font-size:23px;")
 )
 
 line_daily_vaccination_tab <-tabPanel(
@@ -139,7 +138,10 @@ map_plot_sidebar <- sidebarPanel(
 )
 
 map_plot_main <- mainPanel(
-  plotlyOutput(outputId = "map")
+  plotlyOutput(outputId = "map"),
+  h1("Description/Analysis of the visualization:"),
+  br(),
+  p("The visualization shown in the figure above provides a clearer and more specific understanding of the global acceptance rate of the vaccine dose. From the figure above, it can be seen that India has the most places for daily vaccination, while China's full vacation is the highest. But it is clear that the total number of people vaccinated nationwide is still low.", style = "font-size:23px;")
 )
 
 map_plot_tab <- tabPanel(
