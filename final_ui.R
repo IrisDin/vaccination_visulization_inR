@@ -28,11 +28,11 @@ we will conduct an in-depth analysis of people's willingness and brand of vaccin
   ),
   br(),
   h1("Main questions🤔:"),
-  p("Question 1: To see the trend of people getting vaccinated around the world by analyzing different vaccine brand being used worldwide"),
+  p("Question 1: To see the trend of people getting vaccinated around the world by analyzing different vaccine brand being used worldwide.",style = "font-size:20px;"),
   br(),
-  p("Question 2: Daily vaccination trend in different country and in different period of time."),
+  p("Question 2: Daily vaccination trend in different country and in different period of time.",style = "font-size:20px;"),
   br(),
-  p("Question 3: To visualize the distribution of vaccinated population in a world map.",
+  p("Question 3: To visualize the distribution of vaccinated population in a world map." ,style = "font-size:20px;",
   br(),
   h1("About the dataset:"),
   p("We found the dataset from the Kaggle site which was collected from the authoritative organization Our World in Data GitHub repository specifically for the covid-19, and it is still continuing to update. There are two files of the dataset, one contains locations, also includes vaccination sources' information. 
@@ -59,12 +59,12 @@ summary_tab <- tabPanel(
 being used most frequently. By the end of Jan, 2022, more than 600 millions of people have taken the vaccine from Pfizer/BioNtech, which is the most popular brand all over the world.", style = "font-size:20px;"),
             p("Second takeaway: The daily vaccination trend of the U.S. seems steady as time passes and has been kept under 5 millions per day. Compared with the U.S., Chinese daily vaccination rate has been constantly increased from under 5 millions per day to over 10 millions per day. This comparison proves that American people are not taking vaccination as seriously as Chinese do. Moreover, even though the daily vaccination number starts to decrease after Jan, 2022, China still has the highest daily vaccination rate than all of the other countries in the world. ", style = "font-size:20px;"),
             br(),
-            p("Third takeaway: China has the highest daily vaccination and the most vacccinated population in the world. India is the country that covered with the most fully vaccinated population. COVID-19 is originated in China so it is easy to tell that China is the one that 
-takes the pandemic most seriously. As its nearby country, India also took immediate actions to fight against the coronavirus. The pandemic is orinally identified in China, and then it spread to Asia and then being spread throughout the whole world. Countries with large population density are more able to be infected and
+            p("Third takeaway: China has the most vacccinated population in the world. India is the country that covered with the higest number of daily vaccinations. Since COVID outbreak is relatively early in China, so it is easy to tell that China is the one that 
+takes the pandemic most seriously. As its nearby country, India also took immediate actions to fight against the coronavirus. The spreadout of the pandemic is extremly fast throughout the world. Countries with large population density are more able to be infected and
 the U.S. has also been influenced severely so it has a relative high vaccinated population as well.", style = "font-size:20px;"),
-            p("Fourth takeaway: China has the highest daily vaccination and the most vacccinated population in the world. India is the country that covered with the most fully vaccinated population. COVID-19 is originated in China so it is easy to tell that China is the one that 
-takes the pandemic most seriously. As its nearby country, India also took immediate actions to fight against the coronavirus. The pandemic is orinally identified in China, and then it spread to Asia and then being spread throughout the whole world. Countries with large population density are more able to be infected and
-the U.S. has also been influenced severely so it has a relative high vaccinated population as well.", style = "font-size:20px;"),
+            p("Forth Takeaway: Up to the most recent data, from the overall trend for the daily vaccinations in the country China, United States, and India all shown a decreasing tendency till the February 1st. Although these are the countries with relatively high daily 
+              vaccinations in general. Still, due to the gradual loose policy indifferent region, seems like the number of people getting vaccinated is decreasing. Especially in the United States, for instance, wearing a mask is become optional in some regions, and even 
+              at the restaurant, no vaccination verification is needed as well. Thus, it could be a crucial factor that leads to the nowadays trend.", style = "font-size:20px;"),
             br(),
             h1("Insight💡："),
             p("In recent years, the covid-19 pandemic has swept the entire globe and caused a large number of infections and deaths. From the data visualizations we made, we are able to find that China has the highest number of daily vaccinated also has shown the highest number of people fully vaccinated. To some extent, it is the country that most actively prevents and controls the pandemic mostly due to the strict regulations and widespread of vaccinations. And the U.S. also has a relatively high number of daily vaccinations, however, with a low level of people fully vaccinated. It is mostly due to the policy being made within different states and the consciousness of being vaccinated.", style = "font-size:20px;"),
