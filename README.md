@@ -19,7 +19,7 @@ Feel free to delete these instructions for your final README.md file and to make
 
 # Introduction
 
-**The COVID-19 pandemic has led to the dramatic loss of human life and presents unprecedented challenges to not only public health, but also individual health more importantly. Though, people who had Covid recovered, still Covid do have potential sequelae to the different organs. Thus, it is crucial and urgent to get vaccinated and make it universally accessible to ensure a safe condition for the general public. The pandemic is far from over, and vaccines are our best bet on staying safe. As more and more people get vaccinated, the community immunity, also individual community would both improve and further secure the invade of the virus.**
+**The COVID-19 pandemic has led to the dramatic loss of human life and presents unprecedented challenges to not only public health, but also individual health more importantly. Though, people who had Covid recovered, still Covid do have potential sequelae to the different organs. Thus, it is crucial and urgent to get vaccinated and make it universally accessible to ensure a safe condition for the general public. This pandemic is far from over, and vaccines are our best bet on staying safe. As more and more people get vaccinated, the community immunity, also individual community would both improve and further secure the invade of the virus.**
 
 
 # Conclusion / Summary Takeaways
