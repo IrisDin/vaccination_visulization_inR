@@ -16,10 +16,10 @@ vac_type_data$date <- as.Date(vac_type_data$date)
 vac_data$date <- as.Date(vac_data$date)
 
 intro_tab <- tabPanel(
-  "Introduction:",
+  "Introduction",
   fluidPage(theme = bs_theme(bootswatch = "minty"),
             img( border="0",src = "https://publichealth.jhu.edu/sites/default/files/styles/article_feature/public/2021-07/carrying-equity-in-covid-19-vaccination-forward.png?h=f2862316&itok=C9sfEOAv", height = 400, width = 700),
-            h1("Purpose/importance"),
+            h1("Purpose/importance:"),
             p("The COVID-19 pandemic has led to the dramatic loss of human life and presents unprecedented challenges to not only public health, but also individual health more importantly. Though, people who had Covid recovered, still Covid do have potential sequelae to the different organs. 
 Thus, it is crucial and urgent to get vaccinated and make it universally accessible to ensure a safe condition for the general public. The pandemic is far from over, and vaccines are our best bet on staying safe. As more and more people get vaccinated, the community immunity, 
 also individual community would both improve and further secure the invade of the virus. Our main issue is the inconvenience that covid brings to people's lives. This issue is very important because it relates to the long-term impact of covid on humans. To address this issue, 
@@ -37,7 +37,7 @@ we will conduct an in-depth analysis of people's willingness and brand of vaccin
   p("We found the dataset from the Kaggle site which was collected from the authoritative organization Our World in Data GitHub repository specifically for the covid-19, and it is still continuing to update. There are two files of the dataset, one contains locations, also includes vaccination sources' information. 
             The second file is information about the manufacturers like Moderna and Pfizer. From the comprehensive vaccination information in different countries, people can see the total number of people who get vaccinated in their country which might let them feel safe. Also, from the vaccination information, people can also 
             visualize which country does not access adequate medical resources(vaccinations) that further provided them with help and facilitated the progress to ending the global pandemic."),
-  tags$a(href ="https://www.kaggle.com/gpreda/covid-world-vaccination-progress.", "Visit kaggle Website to check our data"),
+  tags$a(href ="https://www.kaggle.com/gpreda/covid-world-vaccination-progress", "Visit kaggle Website to check our data"),
   br(),
   h1("limitations:"),
   br(),
@@ -49,8 +49,9 @@ we will conduct an in-depth analysis of people's willingness and brand of vaccin
 
 
 summary_tab <- tabPanel(
-  "Summary/Takeways:",
+  "Summary/Takeways",
   fluidPage(theme = bs_theme(bootswatch = "minty"),
+            img( border="0",src = "https://www.hopkinsmedicine.org/-/media/images/health/1_-conditions/coronavirus/vaccine3.ashx?la=en&hash=E14E7B4842E409C6FC40A8659B1B68F3529C0841", height = 450, width = 700),
             h1("Specific takeaways："),
             p("First takeaway: There is an increasing pattern of vaccine types being used in the world and more and more people are getting vaccinated, which shows that people's self-protection awareness is increased as time goes by. Beyond this trend, it is obivious that Pfizer/BioNtech and Moderna are the top two brands that
 being used most frequently. By the end of Jan, 2022, more than 600 millions of people have taken the vaccine from Pfizer/BioNtech, which is the most popular brand all over the world."),
